@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace HeadphonesStore.Models
 {
-    public class Headphones
+    public class Audio
     {
+        [Key]
         public int HeadphonesId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

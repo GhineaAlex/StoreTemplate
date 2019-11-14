@@ -8,6 +8,6 @@ namespace HeadphonesStore.ViewModels
 {
     public class HomeViewModel
     {
-        public IEnumerable<Headphones> PopularHeadphones { get; set; }
+        public IEnumerable<Audio> PopularHeadphones { get; set; }
     }
 }

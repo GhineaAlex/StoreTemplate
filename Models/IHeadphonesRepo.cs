@@ -7,8 +7,8 @@ namespace HeadphonesStore.Models
 {
     public interface IHeadphonesRepo
     {
-        IEnumerable<Headphones> AllHeadphones { get; }
-        IEnumerable<Headphones> PopularHeadphones { get; }
-        Headphones GetHeadphonesById(int headphonesId);
+        IEnumerable<Audio> AllHeadphones { get; }
+        IEnumerable<Audio> PopularHeadphones { get; }
+        Audio GetHeadphonesById(int headphonesId);
     }
 }

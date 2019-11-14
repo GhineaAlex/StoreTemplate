@@ -13,25 +13,25 @@ namespace HeadphonesStore.Models
         {
             _appDbContext = appDbContext;
         }
-        public IEnumerable<Headphones> AllHeadphones
+        public IEnumerable<Audio> AllHeadphones
         {
             get
             {
-                return _appDbContext.headphones.Include(c => c.Category);
+                return _appDbContext.Headphones.Include(c => c.Category);
             }
         }
 
-        public IEnumerable<Headphones> PopularHeadphones
+        public IEnumerable<Audio> PopularHeadphones
         {
             get
             {
-                return _appDbContext.headphones.Include(c => c.Category).Where(prop => prop.PopularHeadphones);
+                return _appDbContext.Headphones.Include(c => c.Category).Where(p => p.PopularHeadphones);
             }
         }
 
-        public Headphones GetHeadphonesById(int headphonesId)
+        public Audio GetHeadphonesById(int headphonesId)
         {
-            return _appDbContext.headphones.FirstOrDefault(p => p.HeadphonesId == headphonesId);
+            return _appDbContext.Headphones.FirstOrDefault(p => p.HeadphonesId == headphonesId);
         }
     }
 }

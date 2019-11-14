@@ -8,7 +8,7 @@ namespace HeadphonesStore.ViewModels
 {
     public class HeadphonesListViewModel
     {
-        public IEnumerable<Headphones> headphones { get; set; }
+        public IEnumerable<Audio> Headphones { get; set; }
         public string CurrentCategory { get; set; }
     }
 }

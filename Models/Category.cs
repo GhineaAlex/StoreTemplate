@@ -10,6 +10,6 @@ namespace HeadphonesStore.Models
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string Description { get; set; }
-        public List<Headphones> headphones { get; set; }
+        public List<Audio> Headphones { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace HeadphonesStore.Controllers
         }
         public ViewResult List(string category)
         {
-            IEnumerable<Headphones> _headphones;
+            IEnumerable<Audio> _headphones;
             string currentCategory;
             if(string.IsNullOrEmpty(category))
             {
@@ -34,7 +34,7 @@ namespace HeadphonesStore.Controllers
             }
             return View(new HeadphonesListViewModel            
             {
-                headphones = _headphones,
+                Headphones = _headphones,
                 CurrentCategory = currentCategory
             });
         }

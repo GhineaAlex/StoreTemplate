@@ -56,7 +56,8 @@ namespace HeadphonesStore
             app.UseSession();
 
             app.UseRouting();
-
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
             endpoints.MapControllerRoute(
