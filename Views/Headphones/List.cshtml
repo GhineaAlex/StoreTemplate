@@ -1,0 +1,18 @@
+﻿@model HeadphonesStore.ViewModels.HeadphonesListViewModel
+
+<h1>@Model.CurrentCategory</h1>
+@foreach(var headphones in Model.headphones)
+{
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        
+        <div class="caption">
+            <h3 class="pull-right">@headphones.Price.ToString("c")</h3>
+            <h3>
+                <a asp-controller="Home" asp-action="Details" asp-route-id="@headphones.HeadphonesId">@headphones.Name</a>
+            </h3>
+            <p>@headphones.Description</p>
+        </div>
+    </div>
+</div>
+}

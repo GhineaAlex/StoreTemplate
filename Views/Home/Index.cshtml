@@ -1,0 +1,13 @@
+﻿
+@model HeadphonesStore.ViewModels.HomeViewModel
+<partial name="_Carousel" />
+
+<h2> The most awesome headphones</h2>
+
+<div class="row">
+
+    @foreach (var headphones in Model.PopularHeadphones)
+    {
+        <partial name="_HeadphonesCard" model="headphones" />
+    }
+</div>
