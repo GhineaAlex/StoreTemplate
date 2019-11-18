@@ -2,7 +2,7 @@
 
 namespace HeadphonesStore.Migrations
 {
-    public partial class db9 : Migration
+    public partial class test : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

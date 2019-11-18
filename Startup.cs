@@ -35,7 +35,7 @@ namespace HeadphonesStore
             services.AddScoped<ICategoryRepo, CategoryRepo>();
             services.AddScoped<IHeadphonesRepo, HeadphonesRepo>();
             //services.AddScoped<IOrderRepository, OrderRepository>();
-            //services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+            services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
 
             services.AddHttpContextAccessor();
             services.AddSession();
