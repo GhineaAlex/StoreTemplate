@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HeadphonesStore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20191118234111_test")]
-    partial class test
+    [Migration("20191125093800_td")]
+    partial class td
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

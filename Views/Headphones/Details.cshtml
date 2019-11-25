@@ -1,6 +1,6 @@
 ﻿@model HeadphonesStore.Models.Audio
 
-<h2> @Model.Name</h2>
+<h2>@Model.Name</h2>
 
 <div class="thumbnail">
     <img alt="@Model.Name" src="@Model.ImageUrl">
@@ -9,8 +9,13 @@
         <h3>
             <a href="#">@Model.Name</a>
         </h3>
-        <h4>@Model.Description</h4>
-        
+       
+        <p>@Model.Description</p>
+        <div class="addToCart">
+            <p class="button">
+                <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
+                   asp-route-pieId="@Model.HeadphonesId">Add to cart</a>
+            </p>
+        </div>
     </div>
-    
 </div>
