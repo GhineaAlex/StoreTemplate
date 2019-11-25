@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace HeadphonesStore.Models
 {
-    public interface ICategoryRepo
+    public interface ICategoryRepo : IBaseRepo<Category>
     {
-        IEnumerable<Category> AllCategories { get; }
+        
     }
 }

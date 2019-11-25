@@ -24,13 +24,13 @@ namespace HeadphonesStore.Controllers
             string currentCategory;
             if(string.IsNullOrEmpty(category))
             {
-                _headphones = _headphonesRepo.AllHeadphones.OrderBy(p => p.HeadphonesId);
+                _headphones = _headphonesRepo.GetAll().OrderBy(p => p.HeadphonesId);
                 currentCategory = "All headphones";
             }
             else
             {
-                _headphones = _headphonesRepo.AllHeadphones.Where(p => p.Category.CategoryName == category).OrderBy(p => p.HeadphonesId);
-                currentCategory = _categoryRepo.AllCategories.FirstOrDefault(c => c.CategoryName == category)?.CategoryName;
+                _headphones = _headphonesRepo.GetAll().Where(p => p.Category.CategoryName == category).OrderBy(p => p.HeadphonesId);
+                currentCategory = _categoryRepo.GetAll().FirstOrDefault(c => c.CategoryName == category)?.CategoryName;
             }
             return View(new HeadphonesListViewModel            
             {

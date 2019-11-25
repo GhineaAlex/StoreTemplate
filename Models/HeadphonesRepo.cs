@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace HeadphonesStore.Models
 {
-    public class HeadphonesRepo : IHeadphonesRepo
+    public class HeadphonesRepo : BaseRepo<Audio>, IHeadphonesRepo
     {
-        private readonly AppDbContext _appDbContext;
-        public HeadphonesRepo(AppDbContext appDbContext)
+        public HeadphonesRepo(AppDbContext contextRepo) : base(contextRepo)
         {
-            _appDbContext = appDbContext;
         }
         public IEnumerable<Audio> AllHeadphones
         {
             get
             {
-                return _appDbContext.Headphones.Include(c => c.Category);
+                return ContextRepo.Headphones.Include(c => c.Category);
             }
         }
 
@@ -25,13 +23,13 @@ namespace HeadphonesStore.Models
         {
             get
             {
-                return _appDbContext.Headphones.Include(c => c.Category).Where(p => p.PopularHeadphones);
+                return ContextRepo.Headphones.Include(c => c.Category).Where(p => p.PopularHeadphones);
             }
         }
 
         public Audio GetHeadphonesById(int headphonesId)
         {
-            return _appDbContext.Headphones.FirstOrDefault(p => p.HeadphonesId == headphonesId);
+            return ContextRepo.Headphones.FirstOrDefault(p => p.HeadphonesId == headphonesId);
         }
     }
 }

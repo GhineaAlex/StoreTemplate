@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace HeadphonesStore.Models
 {
-    public interface IHeadphonesRepo
+    public interface IHeadphonesRepo : IBaseRepo<Audio>
     {
-        IEnumerable<Audio> AllHeadphones { get; }
         IEnumerable<Audio> PopularHeadphones { get; }
         Audio GetHeadphonesById(int headphonesId);
     }

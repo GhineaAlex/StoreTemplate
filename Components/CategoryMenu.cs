@@ -16,7 +16,7 @@ namespace HeadphonesStore.Components
         }
         public IViewComponentResult Invoke()
         {
-            var categories = _categoryRepo.AllCategories.OrderBy(c => c.CategoryName);
+            var categories = _categoryRepo.GetAll().OrderBy(c => c.CategoryName);
             return View(categories);
         }
     }

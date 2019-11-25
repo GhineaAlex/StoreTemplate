@@ -33,7 +33,7 @@ namespace HeadphonesStore.Controllers
 
         public RedirectToActionResult AddToShoppingCart(int headphonesId)
         {
-            var selectedHeadphones = _headphonesRepo.AllHeadphones.FirstOrDefault(p => p.HeadphonesId == headphonesId);
+            var selectedHeadphones = _headphonesRepo.GetAll().FirstOrDefault(p => p.HeadphonesId == headphonesId);
 
             if (selectedHeadphones != null)
             {
@@ -44,7 +44,7 @@ namespace HeadphonesStore.Controllers
 
         public RedirectToActionResult RemoveFromShoppingCart(int headphonesId)
         {
-            var selectedHeadphones = _headphonesRepo.AllHeadphones.FirstOrDefault(p => p.HeadphonesId == headphonesId);
+            var selectedHeadphones = _headphonesRepo.GetAll().FirstOrDefault(p => p.HeadphonesId == headphonesId);
 
             if(selectedHeadphones != null)
             {
