@@ -19,7 +19,8 @@ namespace HeadphonesStore.Models
         public List<ShoppingCartItem> ShoppingCartItems { get; set; }
         public static ShoppingCart GetCart(IServiceProvider services)
         {
-            ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
+            ISession session = services.GetRequiredService<IHttpContextAccessor>()?
+                .HttpContext.Session;
 
             var context = services.GetService<AppDbContext>();
             string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();

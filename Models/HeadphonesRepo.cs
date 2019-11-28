@@ -27,6 +27,14 @@ namespace HeadphonesStore.Models
             }
         }
 
+        public IEnumerable<Audio> Headphones
+        {
+            get
+            {
+                return ContextRepo.Headphones.Include(c => c.Category);
+            }
+        }
+
         public Audio GetHeadphonesById(int headphonesId)
         {
             return ContextRepo.Headphones.FirstOrDefault(p => p.HeadphonesId == headphonesId);

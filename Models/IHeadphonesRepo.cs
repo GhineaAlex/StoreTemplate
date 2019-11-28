@@ -7,6 +7,7 @@ namespace HeadphonesStore.Models
 {
     public interface IHeadphonesRepo : IBaseRepo<Audio>
     {
+        public IEnumerable<Audio> Headphones { get; }
         IEnumerable<Audio> PopularHeadphones { get; }
         Audio GetHeadphonesById(int headphonesId);
     }
